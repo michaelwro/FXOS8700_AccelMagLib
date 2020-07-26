@@ -13,7 +13,7 @@ To install this code library, clone this repository and place it in your Arduino
 If you have magnetometer calibration parameters for hard and soft iron distortions, they can be programmed in AccelMagFXOS8700.h.
 
 ```cpp
-// M_calib = S[3x3] * (M_raw[3x1] - B[3x1])
+// M_calib[3x1] = S[3x3] * (M_raw[3x1] - B[3x1])
 #define APPLY_MAG_CALIB  // Toggle comment to apply magnetometer calibration parameters
 #define SENSORCALIB_MAG_SX (1.0f)    // Soft iron matrix X
 #define SENSORCALIB_MAG_SY (1.0f)    // Soft iron matrix Y

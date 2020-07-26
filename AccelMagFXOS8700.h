@@ -42,6 +42,7 @@
 // ----------------------------------------------------------------------------
 // Magnetometer calibration constants
 // ----------------------------------------------------------------------------
+// M_calib[3x1] = S[3x3] * (M_raw[3x1] - B[3x1])
 // #define APPLY_MAG_CALIB  // Uncomment to apply magnetometer calibration parameters
 #define SENSORCALIB_MAG_SX (1.0f)    // Soft iron matrix X
 #define SENSORCALIB_MAG_SY (1.0f)    // Soft iron matrix Y
