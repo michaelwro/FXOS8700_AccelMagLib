@@ -23,6 +23,13 @@ If you have magnetometer calibration parameters for hard and soft iron distortio
 #define SENSORCALIB_MAG_BZ (0.0f)  // Hard iron offset Z
 ```
 
+## Arduino Wiring
+
+* FXOS8700 VIN -> Arduino Uno 3.3V
+* FXOS8700 GND -> Arduino Uno Ground
+* FXOS8700 SDA -> Arduino Uno A4
+* FXOS8700 SCL -> Arduino Uno A5
+
 
 ## To-Do
 
