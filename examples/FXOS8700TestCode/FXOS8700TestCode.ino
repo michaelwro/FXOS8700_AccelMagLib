@@ -30,7 +30,11 @@
 #include <Wire.h>
 #include "AccelMagFXOS8700.h"
 
-// Sensor class
+/** 
+ * Init. sensor class
+ * 0x8700A is the accelerometer ID.
+ * 0x8700B is the magnetometer ID.
+ */
 AccelMagSensor AccelMag = AccelMagSensor(0x8700A, 0x8700B);
 
 // Variables
