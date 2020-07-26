@@ -1,4 +1,4 @@
-# FXOS8700 Acceleromter/Magnetometer Arduino Sensor Library
+# FXOS8700 Accelerometer/Magnetometer Arduino Sensor Library
 
 **Code By:** Michael Wrona | B.S. Aerospace Engineering | GitHub: [@michaelwro](https://github.com/michaelwro)
 

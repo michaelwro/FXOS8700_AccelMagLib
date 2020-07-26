@@ -72,7 +72,7 @@ void loop() {
 
         // Perform reading. Terminate if reading failed.
         if (AccelMag.ReadSensor() == false) {
-            Serial.println("Sensor reading failed. Terminating.")
+            Serial.println("Sensor reading failed. Terminating.");
             return;
         } 
         
