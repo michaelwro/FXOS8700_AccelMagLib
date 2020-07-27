@@ -39,7 +39,7 @@
 // ------------------------------------
 
 // ----------------------------------------------------------------------------
-// AccelMagSensor(int32_t accelID, int32_t magID)
+// AccelMagFXOS8700(int32_t accelID, int32_t magID)
 // ----------------------------------------------------------------------------
 /**
  * Constructor for the FXOS8700 Accelerometer/Magnetometer class. Be sure to
@@ -50,7 +50,7 @@
  * @param accelID  I2C address of the accelerometer
  * @param magID    I2C address of the magnetometer
  */
-AccelMagSensor::AccelMagSensor(int32_t accelID, int32_t magID)
+AccelMagFXOS8700::AccelMagFXOS8700(int32_t accelID, int32_t magID)
 {
     this->accelID = accelID;
     this->magID = magID;
@@ -68,7 +68,7 @@ AccelMagSensor::AccelMagSensor(int32_t accelID, int32_t magID)
  * @param accRange  Desired accelerometer measurement range (ACCEL_RNG_2G,
  *                  ACCEL_RNG_4G, ACCEL_RNG_8G)
  */
-bool AccelMagSensor::InitializeSensor(AccelRanges_t accRange)
+bool AccelMagFXOS8700::InitializeSensor(AccelRanges_t accRange)
 {
     uint8_t connectedSensorID;
 
@@ -120,7 +120,7 @@ bool AccelMagSensor::InitializeSensor(AccelRanges_t accRange)
  * 
  * @return  True if successful, false if failed.
  */
-bool AccelMagSensor::ReadSensor(void)
+bool AccelMagFXOS8700::ReadSensor(void)
 {
     // Read 13 bytes from sensor
     Wire.beginTransmission((byte)FXOS8700_ADDRESS);
@@ -217,7 +217,7 @@ bool AccelMagSensor::ReadSensor(void)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetAccelX(float &ptrOut)
+void AccelMagFXOS8700::GetAccelX(float &ptrOut)
 {
     ptrOut = this->ax;
 }
@@ -231,7 +231,7 @@ void AccelMagSensor::GetAccelX(float &ptrOut)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetAccelY(float &ptrOut)
+void AccelMagFXOS8700::GetAccelY(float &ptrOut)
 {
     ptrOut = this->ay;
 }
@@ -245,7 +245,7 @@ void AccelMagSensor::GetAccelY(float &ptrOut)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetAccelZ(float &ptrOut)
+void AccelMagFXOS8700::GetAccelZ(float &ptrOut)
 {
     ptrOut = this->az;
 }
@@ -259,7 +259,7 @@ void AccelMagSensor::GetAccelZ(float &ptrOut)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetMagX(float &ptrOut)
+void AccelMagFXOS8700::GetMagX(float &ptrOut)
 {
     ptrOut = this->mx;
 }
@@ -273,7 +273,7 @@ void AccelMagSensor::GetMagX(float &ptrOut)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetMagY(float &ptrOut)
+void AccelMagFXOS8700::GetMagY(float &ptrOut)
 {
     ptrOut = this->my;
 }
@@ -287,19 +287,10 @@ void AccelMagSensor::GetMagY(float &ptrOut)
  * 
  * @param ptrOut  Pointer to to assign value to.
  */
-void AccelMagSensor::GetMagZ(float &ptrOut)
+void AccelMagFXOS8700::GetMagZ(float &ptrOut)
 {
     ptrOut = this->mz;
 }
-
-
-// ----------------------------------------------------------------------------
-// ~AccelMagSensor(void)
-// ----------------------------------------------------------------------------
-/**
- * Deconstructor for the FXOS8700 Accelerometer/Magnetometer class.
- */
-AccelMagSensor::~AccelMagSensor(){}
 
 
 
@@ -317,7 +308,7 @@ AccelMagSensor::~AccelMagSensor(){}
  * @param regOfInterest  Register address on device.
  * @param valToWrite     Value to write to register.
  */
-void AccelMagSensor::I2Cwrite8(byte regOfInterest, byte valToWrite)
+void AccelMagFXOS8700::I2Cwrite8(byte regOfInterest, byte valToWrite)
 {
     // Init. communication
     Wire.beginTransmission(FXOS8700_ADDRESS);
@@ -341,7 +332,7 @@ void AccelMagSensor::I2Cwrite8(byte regOfInterest, byte valToWrite)
  * @param regOfInterest  Register address on device.
  * @return               Value/data in register.
  */
-byte AccelMagSensor::I2Cread8(byte regOfInterest)
+byte AccelMagFXOS8700::I2Cread8(byte regOfInterest)
 {
     byte val;
 

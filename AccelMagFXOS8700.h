@@ -114,11 +114,10 @@ typedef enum
 // ----------------------------------------------------------------------------
 // Accelerometer & Magnetometer Class
 // ----------------------------------------------------------------------------
-class AccelMagSensor
+class AccelMagFXOS8700
 {
     public:
-        AccelMagSensor(int32_t accelID = -1, int32_t magID = -1);
-        ~AccelMagSensor();
+        AccelMagFXOS8700(int32_t accelID = -1, int32_t magID = -1);
         bool InitializeSensor(AccelRanges_t accRange = ACCEL_RNG_2G);
         bool ReadSensor(void);
         void GetAccelX(float &ptrOut);  // [m/s/s]
